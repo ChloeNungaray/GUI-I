@@ -1,9 +1,13 @@
 <!--
-Name: Chloe Nungaray
-Date: 9/7/2021
-Description: For this first assignment, I created an about me webpage
-that includes information about me being a student and a few skills
-and hobbies that I have.
+File: index.html
+GUI Assignment: Creating Your First Web Page
+Description: I created an about me webpage that includes 
+information about me being a student, a few interests
+and hobbies that I have, and a couple experiences.
+Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
+Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CN on September 16, 2021 at 9:06 PM
 -->
 
 <!DOCTYPE html>
@@ -17,7 +21,7 @@ and hobbies that I have.
     </head>
 
     <body>
-        
+        <!-- I use this border class to add style to my webpage.-->
         <h1 class = "border">About Chloe Nungaray</h1>
         
         <img class = "border" src=images/photo.jpg alt="Picture of me at a Dean's list celebration" title="Picture of me at a Dean's list celebration">
@@ -27,17 +31,17 @@ and hobbies that I have.
                 of Algorithms. I am set to graduate with my BS in Computer science in May 2022. I also have a minor in Mathematics. 
                 Currently, I work in IT Tech Services for UMass Lowell and have been working there for over a year.</p>
         
-                <table>
-                    
+                <!--This table has more information about me including a couple links; I use list elements for formatting
+                in a few of the table cells-->
+                <table>  
                     <tr>
                         <th>LinkedIn</th>
                         <th>Email</th>
                         <th>Hobbies</th>
                         <th>Interests</th>
-                        <th>Skills</th>
+                        <th>Favorite Programming Languages</th>
                     </tr>
                     
-
                     <tr>
                         <!-- this link will bring a user to my profile if they are signed into LinkedIn already, if a user is not signed in
                         then it will bring them to the LinkedIn Sign Up page-->
@@ -45,20 +49,21 @@ and hobbies that I have.
                         <td>chloenungaray13@gmail.com</td>
                         <td>
                         <ul>
-                        <li>I like to draw and play video games</li>
+                            <li>I like to draw and play video games</li>
                             
-                                <li>I solve coding problems on hackerrank</li>
-                        </ul>
-                                <a href="https://www.hackerrank.com/chloenungaray13" target="_blank">see my certifications and badges</a>
-                                
+                            <li>I solve coding problems on hackerrank</li>
+                        
+                            <li><a href="https://www.hackerrank.com/chloenungaray13" target="_blank">see my hackerrank certifications and badges here</a></li>
+                        </ul>       
                         </td>
-                        <td>I am interested in: 
+                        <td> 
                         <ul>
                             <li>database systems</li>
                             <li>cybersecurity</li>
+                            <li>machine learning</li>
                         </ul>
                         </td>
-                        <td>Some of my favorite programming languages are: 
+                        <td>
                         <ul>
                             <li>C++</li>
                             <li>Python</li>
@@ -68,6 +73,24 @@ and hobbies that I have.
                         </td>
                     </tr>
                 </table>
+                <!-- I use a class called grid here to help position my photos and some text-->
+                <div class = "grid">
+                <img class = "border" src=images/gator.jpg alt="Picture of me holding a baby alligator" title="Picture of me holding a baby alligator">
 
+                <p class = "border">These photos were taken when I was visiting family in Florida. In the left photo, I am holding a baby alligator,
+                    and in the right photo, I was holding a snake. It was my first time holding either of these creatures, and it was an exciting 
+                    experience. I love trying new things even if they are a bit scary at first. I would do it again if I had the chance! 
+                </p>
+
+                <img class = "border" src=images/snake.jpg alt="Picture of me holding a snake" title="Picture of me holding a snake">
+                </div>
+
+                <p>
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                        <img style="border:0;width:88px;height:31px"
+                            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                            alt="Valid CSS!" />
+                    </a>
+                </p>
     </body>
 </html>
