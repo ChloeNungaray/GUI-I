@@ -1,28 +1,26 @@
 header, hgroup, nav, footer, figure, figcaption, aside, section, article {
 	display: block;
 }
+
+/*the background image along with the background color makes it seem that there is a gradient*/
 body {
 	background-image: url("ptrbackground.jpg");
 	background-color: #00569f;
-	/*color: #666666;*/
 	font-family: Arial, Helvetica, sans-serif;
-	
 }
 
+/*this wrapper helps display all the content in a grid*/
 #wrapper{
 	width: 80%;
 	min-width: 600px;
 	display:grid;
-	
 	grid-template-areas:
-    'header header header header'
-    'nav content content content'
-	'nav footer footer footer';
-	grid-column: 25% 25% 25% 25%;
-	grid-gap: 0px;
+    'header header header'
+    'nav content content'
+	'nav footer footer';
+	grid-column: 25% 45% 30%;
 	margin-left: auto;
 	margin-right: auto;
-	
 }
 
 #content{
@@ -39,8 +37,9 @@ body {
 	display: inline;
 	padding-right: 20px;
 }
+
 .resort{
-	color:rgb(60, 150, 200);
+	color:rgb(100, 150, 220);
 	font-weight: bold;
 }
 
@@ -81,24 +80,22 @@ nav a:hover {
 header{
 	grid-area: header;
 }
+
 h1 {
-	
 	margin-bottom: 0px;
 	padding: 10px;
 	background-image: url("sunset.jpg");
 	background-position: right;
 	background-repeat: no-repeat;
 	background-color:#000032;
-	
 	color: white;
-	
-	
 }
 h2 {
 	color: #3399CC;
 	padding: 0px;
 	margin-top: 0px;
 }
+
 h1,
 h2 {
 	font-family: Georgia, "Times New Roman", serif;
