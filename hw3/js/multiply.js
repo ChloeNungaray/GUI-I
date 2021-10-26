@@ -6,7 +6,7 @@ and also displays any error messages due to user error.
 Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
 Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
 excerpted for educational purposes with credit to the author.
-updated by CN on October 26, 2021 at 5:03 PM
+updated by CN on October 26, 2021 at 5:46 PM
 */
 function generateTable(){
 /* Get all the numbers from html form */
@@ -15,6 +15,7 @@ var n2 = document.getElementById('num2').value;
 var n3 = document.getElementById('num3').value;
 var n4 = document.getElementById('num4').value;
 
+/*Get the integer value*/
 var num1 = parseInt(n1);
 var num2 = parseInt(n2);
 var num3 = parseInt(n3);
