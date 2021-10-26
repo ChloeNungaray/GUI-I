@@ -1,0 +1,112 @@
+/* 
+File: style.css
+GUI Assignment: Creating an Interactive Dynamic Table
+Description: This css file handles my formatting for the webpage.
+Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
+Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CN on October 26, 2021 at 4:10 PM
+*/
+
+/*Header and background formatting*/
+h1{
+    margin-right:auto;
+    margin-left:10px;
+    color:lightcyan;
+}
+body{
+    background-image: url("images/bg.jpg");
+}
+
+/*Input table formatting */
+table{
+    padding:10px;
+    margin-left:20px;
+    margin-right:20px;
+    border: solid 1px;
+    float:left;
+    background-color:lightskyblue;
+}
+
+td{
+    text-align: right;
+}
+
+#button1{
+    text-align: center;
+}
+
+/*format input boxes*/
+#num1,#num2,#num3,#num4{
+    width: 35px;
+    text-align: right;
+}
+
+/*Multiplcation table formatting*/
+#multTab{
+    padding:0px;
+    max-height:500px;
+    max-width:500px;
+    margin-right:auto;
+    margin-left:auto;
+    display:inline-block;
+    
+}
+
+#table1{
+    border: none;
+    border-spacing: 0px;
+    margin-right: auto;
+    margin-left: 20px;
+    display: table;
+    padding-right: 0px;
+    background-color:transparent;
+}
+
+#td1{
+    border: solid black 2px;
+    text-align: center;
+    min-width: 50px;
+    background-color:lightskyblue;
+    color: black;
+}
+
+/*Formatting for the multiplication table headers*/
+#th1{
+    background-color: black;
+    color: white;
+    min-width: 50px;
+    border:white solid 1px;
+    position:sticky;
+    top: 0;
+}
+
+#th2{
+    background-color:black;
+    color: white;
+    min-width: 50px;
+    border:white solid 1px;
+    position:sticky;
+    left: 0;
+}
+
+/*format error messages*/
+#error{
+    color: darkgrey;
+}
+p{
+    background-color: red;
+    display: inline-block;
+    padding: 0px;
+    border-spacing: 0px;
+    color: white;
+}
+#p1{
+    color:white;
+    font-style: italic;
+    font-weight: 10px;
+    background-color: transparent;
+    display:block;
+}
+
+

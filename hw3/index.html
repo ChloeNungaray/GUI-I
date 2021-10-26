@@ -1,0 +1,56 @@
+<!--
+File: index.html
+GUI Assignment: Creating an Interactive Dynamic Table
+Description: I created a multiplication table generator using HTML/CSS 
+and Javascript.
+Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
+Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CN on October 26, 2021 at 4:10 PM-->
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <!--CSS style-->
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    <h1>Multiplication Table</h1>
+
+    <!--this div will hold the error message display-->
+    <div id = 'error'></div>
+
+    <!--get the values the user entered-->
+    <form onsubmit="return false">
+        <table>
+        <tr>
+            <th>Enter the values for the table</th>
+        </tr>
+        <tr>
+            <td>Minimum Column Value <input type='number' min='-50' max='50' id= 'num1' name='num1' value = 1></td>
+        </tr>
+        <tr>
+            <td>Maximum Column Value <input type='number' min='-50' max='50' id= 'num2' name='num2' value = 6></td>
+        </tr>
+        <tr>
+            <td>Minimum Row Value <input type='number' min='-50' max='50' id= 'num3' name='num3' value = 1></td>
+        </tr>
+        <tr>
+            <td>Maximum Row Value <input type='number' min='-50' max='50' id= 'num4' name='num4' value = 6></td>
+        </tr>
+        <tr>
+        <!--when user clicks button, call generateTable()-->
+            <td id='button1'><button onclick="generateTable()">Submit</button></td>
+        </tr>
+        </table>
+    </form>
+
+    <!--This div will hold the JavaScript string of the multiplication table-->
+    <div id = 'multTab' style = 'overflow:auto'></div>
+    
+    <!--JavaScript--> 
+    <script src="js/multiply.js"></script>
+    
+    </body>
+</html>
