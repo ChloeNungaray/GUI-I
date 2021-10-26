@@ -5,7 +5,7 @@ Description: This css file handles my formatting for the webpage.
 Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
 Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
 excerpted for educational purposes with credit to the author.
-updated by CN on October 26, 2021 at 4:10 PM
+updated by CN on October 26, 2021 at 5:36 PM
 */
 
 /*Header and background formatting*/
@@ -46,7 +46,7 @@ td{
 #multTab{
     padding:0px;
     max-height:500px;
-    max-width:500px;
+    max-width:600px;
     margin-right:auto;
     margin-left:auto;
     display:inline-block;

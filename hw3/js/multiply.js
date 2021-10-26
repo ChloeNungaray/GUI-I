@@ -6,7 +6,7 @@ and also displays any error messages due to user error.
 Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
 Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
 excerpted for educational purposes with credit to the author.
-updated by CN on October 26, 2021 at 4:10 PM
+updated by CN on October 26, 2021 at 5:03 PM
 */
 function generateTable(){
 /* Get all the numbers from html form */
