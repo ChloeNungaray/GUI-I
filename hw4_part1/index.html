@@ -1,0 +1,105 @@
+<!--
+File: index.html
+GUI Assignment: Using the jQuery Plugin/UI with Dynamic Table Part 1
+Description: For this part, I implemented jQuery validation plugin
+to do the error checking for the html form.
+Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
+Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CN on November 19, 2021 at 8:48 PM-->
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <!--CSS style-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--JQuery plugins-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/additional-methods.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#multTable").validate({
+                /*highlight the errors that the jquery validation plugin detects*/
+                errorClass: 'highlight errors',
+                highlight : function(element, errorClass){
+                    $(element).addClass('error');
+                },
+                /*unhighlight the errors when the user fixes the errors*/
+                unhighlight : function(element, errorClass){
+                    $(element).removeClass('error');
+                },
+                /*these messages display when the user enters incorrect input*/
+                messages : {
+                    num1 : {
+                        required : "<br><p>This field is required</p>",
+                        number: "<br><p>Please enter a valid number.<br>Characters will not be accepted</p>",
+                        min: "<br><p>Please enter a number in the range -50 to 50</p>",
+                        max: "<br><p>Please enter a number in the range -50 to 50</p>"
+                    },
+                    num2 : {
+                        required : "<br><p>This field is required</p>",
+                        number: "<br><p>Please enter a valid number.<br>Characters will not be accepted</p>",
+                        min: "<br><p>Please enter a number in the range -50 to 50</p>",
+                        max: "<br><p>Please enter a number in the range -50 to 50</p>"
+                    },
+                    num3 : {
+                        required : "<br><p>This field is required</p>",
+                        number: "<br><p>Please enter a valid number.<br>Characters will not be accepted</p>",
+                        min: "<br><p>Please enter a number in the range -50 to 50</p>",
+                        max: "<br><p>Please enter a number in the range -50 to 50</p>"
+                    },
+                    num4 : {
+                        required : "<br><p>This field is required</p>",
+                        number: "<br><p>Please enter a valid number.<br>Characters will not be accepted</p>",
+                        min: "<br><p>Please enter a number in the range -50 to 50</p>",
+                        max: "<br><p>Please enter a number in the range -50 to 50</p>"
+                    }
+    
+                }
+                
+            });
+        });
+    </script>
+    </head>
+    <body>
+    <h1>Multiplication Table</h1>
+
+    <!--this div will hold the error message display-->
+    <div id = 'error'></div>
+    <!--get the values the user entered-->
+    <form onsubmit="return false" id="multTable">
+        <table>
+        <tr>
+            <th>Enter values between -50 and 50</th>
+        </tr>
+        <tr>
+            <td>Minimum Column Value <input type='number' min='-50' max='50' id= 'num1' name='num1' required value='1'></td>
+        </tr>
+        <tr>
+            <td>Maximum Column Value <input type='number' min='-50' max='50' id= 'num2' name='num2' required value='10'></td>
+        </tr>
+        <tr>
+            <td>Minimum Row Value <input type='number' min='-50' max='50' id= 'num3' name='num3' required value='1'></td>
+        </tr>
+        <tr>
+            <td>Maximum Row Value <input type='number' min='-50' max='50' id= 'num4' name='num4' required value='5'></td>
+        </tr>
+        <tr>
+        <!--when user clicks button, call generateTable()-->
+            <td id='button1'><button input type = "submit" form = "multTable" onclick="generateTable()">Create Table</button></td>
+        </tr>
+        </table>
+    </form>
+
+    <!--This div will hold the JavaScript string of the multiplication table-->
+    <div id = 'multTab' style = 'overflow:auto'></div>
+    
+    <!--JavaScript--> 
+    <script></script>
+    <script src="js/multiply.js"></script>
+    
+    </body>
+</html>

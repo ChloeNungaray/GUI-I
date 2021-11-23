@@ -1,0 +1,240 @@
+<!--
+File: index.html
+GUI Assignment: Using the jQuery Plugin/UI with Dynamic Table Part 2
+Description: This webpage creates a dynamic multiplication tables and also
+creates tabs of multiplication tables for the user. There is also a button
+that allows a user to delete all the tabs at once. A user can also delete
+one tab at a time.
+Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
+Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CN on November 22, 2021 at 9:25 PM-->
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <!--CSS style-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <!--JQuery plugins-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/additional-methods.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#multTable").validate({
+                /*highlight the errors that the jquery validation plugin detects*/
+                errorClass: 'highlight errors',
+                highlight : function(element, errorClass){
+                    $(element).addClass('error');
+                },
+                /*unhighlight the errors when the user fixes the errors*/
+                unhighlight : function(element, errorClass){
+                    $(element).removeClass('error');
+                },
+
+                /*these messages display when the user enters incorrect input*/
+                messages : {
+                    num1 : {
+                        required : "<br><p>This field is required</p>",
+                        number: "<br><p>Please enter a valid number.<br>Characters will not be accepted</p>",
+                        min: "<br><p>Please enter a number in the range -50 to 50</p>",
+                        max: "<br><p>Please enter a number in the range -50 to 50</p>"
+                    },
+                    num2 : {
+                        required : "<br><p>This field is required</p>",
+                        number: "<br><p>Please enter a valid number.<br>Characters will not be accepted</p>",
+                        min: "<br><p>Please enter a number in the range -50 to 50</p>",
+                        max: "<br><p>Please enter a number in the range -50 to 50</p>"
+                    },
+                    num3 : {
+                        required : "<br><p>This field is required</p>",
+                        number: "<br><p>Please enter a valid number.<br>Characters will not be accepted</p>",
+                        min: "<br><p>Please enter a number in the range -50 to 50</p>",
+                        max: "<br><p>Please enter a number in the range -50 to 50</p>"
+                    },
+                    num4 : {
+                        required : "<br><p>This field is required</p>",
+                        number: "<br><p>Please enter a valid number.<br>Characters will not be accepted</p>",
+                        min: "<br><p>Please enter a number in the range -50 to 50</p>",
+                        max: "<br><p>Please enter a number in the range -50 to 50</p>"
+                    }
+    
+                }
+                
+            });
+            
+            $(function() {
+                $("#slider1").slider({
+                min: -50, 
+                max: 50, 
+                step: 1,
+                slide: function(event, input) {
+                    $("#num1").val(input.value);
+                    generateTable();
+                },    
+            });
+        });
+    /*number in text box changed*/
+    $("#num1").change(function() {
+    /*get value from slider*/
+    var slider_val = $("#slider1").slider("value");
+    /*get value from text box*/
+    var textbox_val = $("#num1").val();
+    if (textbox_val > 50 || textbox_val < -50) {
+        //keep original slider value
+        $("#slider1").slider("value", slider_val);
+    }else{
+        //change value in slider to the value in the text box
+        $("#slider1").slider("value", textbox_val);
+    }
+    generateTable();
+    });
+
+    $(function() {
+        $("#slider2").slider({
+            min: -50, 
+            max: 50, 
+            step: 1,
+            slide: function(event, input) {
+                $("#num2").val(input.value);
+                generateTable();
+                }    
+            });
+    });
+    /*number in text box changed*/
+    $("#num2").change(function() {
+    /*get value from slider*/
+    var slider_val = $("#slider2").slider("value");
+    /*get value from text box*/
+    var textbox_val = $("#num2").val();
+    if (textbox_val > 50 || textbox_val < -50) {
+        //keep original slider value
+        $("#slider2").slider("value", slider_val);
+    }else{
+        //change value in slider to the value in the text box
+        $("#slider2").slider("value", textbox_val);
+    }
+    generateTable();
+    });
+
+    $(function() {
+                $("#slider3").slider({
+                min: -50, 
+                max: 50, 
+                step: 1,
+                slide: function(event, input) {
+                    $("#num3").val(input.value);
+                    generateTable();
+                }
+            });
+        });
+    /*number in text box changed*/
+    $("#num3").change(function() {
+    /*get value from slider*/
+    var slider_val = $("#slider3").slider("value");
+    /*get value from text box*/
+    var textbox_val = $("#num3").val();
+    if (textbox_val > 50 || textbox_val < -50) {
+        //keep original slider value
+        $("#slider3").slider("value", slider_val);
+    }else{
+        //change value in slider to the value in the text box
+        $("#slider3").slider("value", textbox_val);
+    }
+    generateTable();
+    });
+
+    $(function() {
+                $("#slider4").slider({
+                min: -50, 
+                max: 50, 
+                step: 1,
+                slide: function(event, input) {
+                    $("#num4").val(input.value);
+                    generateTable();
+                }
+            });
+        });
+    /*number in text box changed*/
+    $("#num4").change(function() {
+    /*get value from slider*/
+    var slider_val = $("#slider4").slider("value");
+    /*get value from text box*/
+    var textbox_val = $("#num4").val();
+    if (textbox_val > 50 || textbox_val < -50) {
+        //keep original slider value
+        $("#slider4").slider("value", slider_val);
+    }else{
+        //change value in slider to the value in the text box
+        $("#slider4").slider("value", textbox_val);
+    }
+    /*create a table at page load with default values*/
+    generateTable();
+    /*hide tab at page load*/
+    $("#tabs").hide();
+    });
+    generateTable();
+        });
+    </script>
+    </head>
+    <body>
+    <h1>Multiplication Table</h1>
+    <h3>You are allowed to create a maxmimum of 15 multiplication table tabs.</h3>
+    <!--this div will hold the error message display-->
+    <div id = 'error'></div>
+    <!--get the values the user entered-->
+    <form onsubmit="return false" id="multTable">
+        <table>
+        <tr>
+            <th>Enter values between -50 and 50</th>
+        </tr>
+        <tr>
+            <td>Minimum Column Value <input type='number' min='-50' max='50' id= 'num1' name='num1' required value='1'></td>
+        </tr>
+        <tr><td><div id="slider1"></div></td></tr>
+        <tr>
+            <td>Maximum Column Value <input type='number' min='-50' max='50' id= 'num2' name='num2' required value='5'></td>
+        </tr>
+            <tr><td><div id="slider2"></div></td></tr>
+        <tr>
+            <td>Minimum Row Value <input type='number' min='-50' max='50' id= 'num3' name='num3' required value='1'></td>
+        </tr>
+            <tr><td><div id="slider3"></div></td></tr>
+        <tr>
+            <td>Maximum Row Value <input type='number' min='-50' max='50' id= 'num4' name='num4' required value='5'></td>
+        </tr>
+            <tr><td><div id="slider4"></div></td></tr>
+        <tr>
+        <!--when user clicks button, call generateTable()-->
+            <td id='button1'><button input type = "submit" form = "multTable" onclick="createTab()">Create Tab</button></td>
+        </tr>
+        <!--these extra table rows are to add some space between the two buttons-->
+        <tr></tr>
+        <tr></tr>
+        <tr>
+            <td id='button2'><button input type = "submit" onclick="delectAll()">Delete All Tabs</button></td>
+        </tr>
+        </table>
+    </form>
+
+    <!--This div will hold the JavaScript string of the multiplication table-->
+    <div id = 'multTab' class="tabscroll" style = 'overflow:auto'></div>
+    
+    <!--Tabs-->
+    <div id="tabs">
+        <ul>
+        </ul>
+    </div>
+
+    <!--JavaScript--> 
+    <script>
+    </script>
+    <script src="js/multiply.js"></script>
+    
+    </body>
+</html>

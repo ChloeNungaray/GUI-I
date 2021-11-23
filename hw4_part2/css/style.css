@@ -1,0 +1,136 @@
+/* 
+File: style.css
+GUI Assignment: Using the jQuery Plugin/UI with Dynamic Table Part 2
+Description: This css file handles my formatting for the webpage.
+Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
+Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CN on November 22, 2021 at 9:25 PM
+*/
+
+/*tabs formatting */
+#tabs{
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+    margin-top: 30px;
+}
+.tabscroll{
+    padding:0px;
+    max-height:500px;
+    max-width:600px;
+    margin-right:auto;
+    margin-left:auto;
+    display:inline-block;
+}
+/*Header and background formatting*/
+h1{
+    margin-right:auto;
+    margin-left:10px;
+    color:lightcyan;
+}
+
+h3{
+    color: rgb(160, 156, 156);
+}
+body{
+    background-image: url("../images/bg.jpg");
+}
+
+/*Input table formatting */
+table{
+    padding:10px;
+    margin-left:20px;
+    margin-right:20px;
+    border: solid 1px;
+    float:left;
+    background-color:lightskyblue;
+}
+
+td{
+    text-align: right;
+}
+
+#button1, #button2{
+    text-align: center;
+}
+
+#button2{
+    margin-top: 50px;
+}
+/*format input boxes*/
+#num1,#num2,#num3,#num4{
+    width: 35px;
+    text-align: right;
+}
+
+/*Multiplcation table formatting*/
+#multTab{
+    padding:0px;
+    max-height:500px;
+    max-width:600px;
+    margin-right:auto;
+    margin-left:auto;
+    display:inline-block;
+    
+}
+
+#table1{
+    border: none;
+    border-spacing: 0px;
+    margin-right: auto;
+    margin-left: 20px;
+    display: table;
+    padding-right: 0px;
+    background-color:transparent;
+}
+
+#td1{
+    border: solid black 2px;
+    text-align: center;
+    min-width: 50px;
+    background-color:lightskyblue;
+    color: black;
+}
+
+/*Formatting for the multiplication table headers*/
+#th1{
+    background-color: black;
+    color: white;
+    min-width: 50px;
+    border:white solid 1px;
+    position:sticky;
+    top: 0;
+}
+
+#th2{
+    background-color:black;
+    color: white;
+    min-width: 50px;
+    border:white solid 1px;
+    position:sticky;
+    left: 0;
+}
+
+/*format error messages*/
+#error{
+    color: darkgrey;
+    font-size: large;
+    font-weight: bold;
+}
+
+.error{
+    border: red solid 2px;
+}
+
+p{
+    display: inline-block;
+    padding: 0px;
+    border-spacing: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
