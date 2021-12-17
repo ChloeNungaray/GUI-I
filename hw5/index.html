@@ -1,0 +1,62 @@
+<!--
+File: index.html
+GUI Assignment: Implementing a Single-Player Scrabble game with Drag-and-Drop
+Description: This webpage allows a user to play a single player scrabble game.
+Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
+Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CN on December 16, 2021 at 9:34 PM-->
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Scrabble!</title>
+    <!--CSS style-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <!--JQuery plugins-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/additional-methods.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!--make droppable img content and on page load generate random tiles-->
+    <script>
+        $(function() {
+            $("#tile_rack").droppable();
+            generate_tiles();
+            generate_droppables();
+        });
+    </script>
+    </head>
+    
+    <body>
+    <h1>Scrabble</h1>
+    <h3>Single-Player</h3>
+    <!--this div will hold the error message display-->
+    <div id = 'error'></div>
+
+    <!--this div will hold the score and relevant information for player-->
+    <div id = 'score'>
+        <!--placeholder for score-->
+        <p>Score: 0</p>
+    </div>
+
+    <div id="board_tiles">
+        <img id ="scrabbleboard" src="images\graphics_data\Scrabble_Board_OneLine.png"> 
+    </div>
+
+    <div id="rand_tiles">
+        <img id="tile_rack" src="images/graphics_data/scrabble-tile-holder.png">
+    </div>
+    
+    <!--when a user clicks a button call the appropriate function-->
+    <button input type = "submit" onclick="next()">Next Word</button>
+    <button input type = "submit" onclick="restart()">Restart</button>
+
+    <!--JavaScript--> 
+    <script src="js/scrabble.js"></script>
+    
+    </body>
+</html>

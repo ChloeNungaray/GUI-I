@@ -1,0 +1,60 @@
+/* 
+File: style.css
+GUI Assignment: Implementing a Single-Player Scrabble game with Drag-and-Drop
+Description: This css file handles my formatting for the Scrabble game.
+Chloe Nungaray, UMass Lowell Computer Science, chloe_nungaray@student.uml.edu
+Copyright (c) 2021 by Chloe. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CN on December 16, 2021 at 9:31 PM
+*/
+
+/*formatting for scrabble board, tile rack, and images*/
+#scrabbleboard{
+    padding: 0px;
+    position:relative;
+}
+
+#tile_rack{
+    display:block;
+    width:700;
+    height:250;
+}
+
+img{
+    margin:0px;
+    display:block;
+}
+
+/*formatting for draggable and droppable content*/
+#draggable { 
+    width: 56px; 
+    height: 50px; 
+}
+
+#droppable { 
+    width: 150px; 
+    height: 150px; 
+    padding: 0.5em; 
+    float: left; 
+    margin: 10px; 
+}
+
+/*Header and background formatting*/
+h1{
+    margin-right:auto;
+    margin-left:10px;
+    color:lightcyan;
+}
+
+h3{
+    color: rgb(160, 156, 156);
+}
+
+body{
+    background-image: url("../images/bg.jpg");
+}
+
+/*scoreboard formatting*/
+#score{
+    color: white;
+}
